@@ -1,1 +1,40 @@
-{     "devDependencies": {         "node-libnmap": "*",         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmtest-node-libnmap",     "homepage": "https://github.com/npmtest/node-npmtest-node-libnmap",     "repository": {         "type": "git",         "url": "https://github.com/npmtest/node-npmtest-node-libnmap.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### basic test coverage for  [node-libnmap (v0.2.15)](https://github.com/jas-/node-libnmap)  [![npm package](https://img.shields.io/npm/v/npmtest-node-libnmap.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-node-libnmap) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-node-libnmap.svg)](https://travis-ci.org/npmtest/node-npmtest-node-libnmap)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "node-libnmap": "*",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmtest/node-npmtest-node-libnmap",
+    "keywords": [
+        "coverage",
+        "test",
+        "node-libnmap"
+    ],
+    "license": "MIT",
+    "main": "lib.npmtest_node_libnmap.js",
+    "name": "npmtest-node-libnmap",
+    "nameAlias": "npmtest_node_libnmap",
+    "nameOriginal": "npmtest-node-libnmap",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmtest/node-npmtest-node-libnmap.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
